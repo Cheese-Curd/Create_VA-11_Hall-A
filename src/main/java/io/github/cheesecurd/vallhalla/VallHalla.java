@@ -17,9 +17,18 @@ public class VallHalla implements ModInitializer {
 
 	public static void logVMessage(String Char, String message)
 	{
-		int totalLength = Char.length() + 4 + message.length();
+		int totalLength;
+		if (Char != "") // I refuse to use !equals(), fuck you
+			totalLength = Char.length() + 4 + message.length();
+		else
+			totalLength = 2 + message.length();
 
-		LOGGER.info("+" + "=".repeat(totalLength) + "+\n| " + Char +": " + message + " |\n+" + "=".repeat(totalLength) + "+");
+		LOGGER.info("+" + "=".repeat(totalLength) + "+");
+		if (Char != "")
+			LOGGER.info("| " + Char +": " + message + " |");
+		else
+			LOGGER.info("| " + message + " |");
+		LOGGER.info("+" + "=".repeat(totalLength) + "+");
 	}
 
 	@Override

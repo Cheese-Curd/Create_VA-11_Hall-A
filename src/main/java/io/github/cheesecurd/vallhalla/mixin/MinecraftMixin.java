@@ -15,6 +15,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class MinecraftMixin {
 	@Inject(method = "<init>", at = @At("TAIL"))
 	private void example$init(GameConfig gameConfig, CallbackInfo ci) {
-		VallHalla.LOGGER.info("Hello from {}", VallHalla.NAME);
+		VallHalla.logVMessage("", "Welcome to Vallhalla.");
 	}
 }
