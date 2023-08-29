@@ -10,6 +10,8 @@ import net.minecraft.resources.ResourceLocation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import static io.github.cheesecurd.vallhalla.Items.;
+
 public class VallHalla implements ModInitializer {
 		public static final String ID = "vallhalla";
 	public static final String NAME = "VA-11 Hall-A";
@@ -44,6 +46,7 @@ public class VallHalla implements ModInitializer {
 		LOGGER.info("+======================================+");
 
 		logVMessage("Eliana", "There are no items yet, is gradle broken or something?");
+		registerItems();
 	}
 
 	public static ResourceLocation id(String path) {
