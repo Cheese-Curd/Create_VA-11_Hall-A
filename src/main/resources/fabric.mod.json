@@ -1,25 +1,25 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "vallhalla",
   "version": "${version}",
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Create: VA-11 Hall-A",
+  "description": "Cyberpunk Bartender Adventure",
   "authors": [
-    "Me!"
+    "Eliana"
   ],
   "contact": {
-    "sources": "https://github.com/Fabricators-of-Create/create-fabric-addon-template"
+    "sources": "https://github.com/Cheese-Curd/Create_VA-11_Hall-A"
   },
   "license": "CC0",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/vallhalla/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.example.modid.ExampleMod"
+      "io.github.cheesecurd.vallhalla.VallHalla"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "vallhalla.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=${fabric_loader_version}",
