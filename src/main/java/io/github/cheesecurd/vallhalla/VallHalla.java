@@ -22,7 +22,7 @@ public class VallHalla implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger(NAME);
 
 	public static final CreativeModeTab VALLHALLA_TAB = FabricItemGroupBuilder.create(new ResourceLocation("vallhalla", "vallhalla_tab"))
-			.icon(() -> new ItemStack(Items.karmotrine))
+			.icon(() -> new ItemStack(Items.shaker_icon))
 			.build();
 
 	public static void logVMessage(String Char, String message)

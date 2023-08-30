@@ -6,6 +6,16 @@
 	"item.vallhalla.karmotrine": "Karmotrine",
 	"item.vallhalla.ingredient_can": "Ingredient Can",
 
-	"itemGroup.vallhalla": "VA-11 Hall-A"
+  "item.vallhalla.bad_touch": "Bad Touch",
+  "item.vallhalla.cobalt_velvet": "Cobalt Velvet",
+  "item.vallhalla.fluffy_dream": "Fluffy Dream",
+  "item.vallhalla.fringe_weaver": "Fringe Weaver",
+  "item.vallhalla.piano_man": "Piano Man",
+  "item.vallhalla.piano_woman": "Piano Woman",
+  "item.vallhalla.piledriver": "Piledriver",
+  "item.vallhalla.sugar_rush": "Sugar Rush",
+  "item.vallhalla.sun_cloud": "Sunshine Cloud",
+  "item.vallhalla.zen_star": "Zen Star",
 
+	"itemGroup.vallhalla.vallhalla_tab": "VA-11 Hall-A"
 }
