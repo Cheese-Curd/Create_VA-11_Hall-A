@@ -30,6 +30,6 @@ bin/
 
 # fabric
 
-run/
+run/*
 !run/config/
 
