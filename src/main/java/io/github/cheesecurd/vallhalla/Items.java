@@ -14,21 +14,27 @@ public class Items
 
 	public static final Item ingredient_can = createItem("ingredient_can",
 			new Item(new FabricItemSettings()
+					.group(VallHalla.VALLHALLA_TAB)
 					.maxCount(20)));
 	public static final Item adelhyde = createItem("adelhyde",
 			new Item(new FabricItemSettings()
+					.group(VallHalla.VALLHALLA_TAB)
 					.maxCount(20))); // Sweetness
 	public static final Item bronson_extract = createItem("bronson_extract",
 			new Item(new FabricItemSettings()
+					.group(VallHalla.VALLHALLA_TAB)
 					.maxCount(20))); // Bitterness
 	public static final Item powdered_delta = createItem("powdered_delta",
 			new Item(new FabricItemSettings()
+					.group(VallHalla.VALLHALLA_TAB)
 					.maxCount(20))); // Sourness
 	public static final Item flanergide = createItem("flanergide",
 			new Item(new FabricItemSettings()
+					.group(VallHalla.VALLHALLA_TAB)
 					.maxCount(20))); // Spiciness
 	public static final Item karmotrine = createItem("karmotrine",
 			new Item(new FabricItemSettings()
+					.group(VallHalla.VALLHALLA_TAB)
 					.maxCount(20))); // Alcohol
 
 	public static void registerItems() {}
