@@ -1,34 +1,20 @@
-# Create Fabric Addon Template
+# Create: *VA-11 Hall-A*
 
-This template mod comes pre-configured for developing an addon mod for Create on Fabric.
+**Cyberpunk Bartender Adventure**
 
+## Authors
+Create [Fabric] Github: [Fabricators of Create](https://github.com/Fabricators-of-Create)
 
-## Setup
+Create [Forge] Github: [Creators of Create](https://github.com/Creators-of-Create)
 
-This template is an extension of the base [Fabric Example Mod](https://github.com/FabricMC/fabric-example-mod).
-Setup is mostly the same.
+Mod Creator: Me!
 
-Additionally, set `recipe_viewer` in [gradle.properties](gradle.properties). Remember to remove unused
-example code. Make sure versions are up-to-date.
+<hr>
 
-When you publish your mod, you should use jars provided by GitHub Actions. These jars will have
-build number metadata and will be compressed by the Machete plugin.
+VA-11 Hall-A Developer: [Sukeban Games](http://sukeban.moe/)
 
-## Features
-- Access to Create and all of its dependencies
-- Mojang Mappings base, with Quilt Mappings and Parchment providing Javadoc and parameters
-- QuiltFlower decompiler for high quality Minecraft sources: `gradlew genSourcesWithQuiltflower`
-- GitHub Actions automatic build workflow
-- Machete Gradle plugin to shrink jar file sizes
-- Developer QOL: Mod Menu, LazyDFU, recipe viewers
+VA-11 Hall-A Publisher: [Ysbryd Games](http://www.ysbryd.net/)
 
-## Other Templates
-- [Multi-loader template](https://github.com/Fabricators-of-Create/create-multiloader-addon-template)
-- [Forge-only template](https://github.com/kotakotik22/CreateAddonTemplate)
+## Legal stuffs
 
-## Help
-Questions? Join us in the #devchat channel of the [Create Discord](https://discord.com/invite/hmaD7Se).
-
-## License
-
-This template is available under the CC0 license. Feel free to do as you wish with it.
+All texture assets are **NOT** mine and belong their respective author.
