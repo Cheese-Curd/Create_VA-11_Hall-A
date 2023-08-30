@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "I I",
+        "I I",
+        " I "
+    ],
+    "key": {
+        "I": {
+            "item": "craete:iron_sheet"
+        },
+    },
+    "result": {
+        "item": "vallhalla:ingredient_can",
+        "count": 1
+    }
+}

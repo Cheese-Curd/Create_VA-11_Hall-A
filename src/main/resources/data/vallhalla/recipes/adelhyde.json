@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "DID",
+        "ICI",
+        "DID"
+    ],
+    "key": {
+        "D": {
+            "item": "minecraft:red_dye"
+        },
+        "I": {
+            "item": "minecraft:sugar"
+        },
+        "C": {
+            "item": "vallhalla:ingredient_can"
+        }
+    },
+    "result": {
+        "item": "vallhalla:adelhyde",
+        "count": 1
+    }
+}

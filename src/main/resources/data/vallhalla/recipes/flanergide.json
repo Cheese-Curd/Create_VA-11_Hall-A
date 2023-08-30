@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "DID",
+        "ICI",
+        "DID"
+    ],
+    "key": {
+        "D": {
+            "item": "minecraft:lime_dye"
+        },
+        "I": {
+            "item": "create:cinder_flour"
+        },
+        "C": {
+            "item": "vallhalla:ingredient_can"
+        }
+    },
+    "result": {
+        "item": "vallhalla:flanergide",
+        "count": 1
+    }
+}

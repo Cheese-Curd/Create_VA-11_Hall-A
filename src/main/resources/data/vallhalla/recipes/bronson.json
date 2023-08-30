@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "DID",
+        "ICI",
+        "DID"
+    ],
+    "key": {
+        "D": {
+            "item": "minecraft:yellow_dye"
+        },
+        "I": {
+            "item": "minecraft:fermented_spidar_eye"
+        },
+        "C": {
+            "item": "vallhalla:ingredient_can"
+        }
+    },
+    "result": {
+        "item": "vallhalla:bronson_extract",
+        "count": 1
+    }
+}
