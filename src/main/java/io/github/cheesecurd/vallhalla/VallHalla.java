@@ -10,10 +10,10 @@ import net.minecraft.resources.ResourceLocation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static io.github.cheesecurd.vallhalla.Items.;
+import static io.github.cheesecurd.vallhalla.Items.registerItems;
 
 public class VallHalla implements ModInitializer {
-		public static final String ID = "vallhalla";
+	public static final String ID = "vallhalla";
 	public static final String NAME = "VA-11 Hall-A";
 	public static final Logger LOGGER = LoggerFactory.getLogger(NAME);
 
@@ -45,7 +45,6 @@ public class VallHalla implements ModInitializer {
 		LOGGER.info("| Time to mix drinks and change lives. |");
 		LOGGER.info("+======================================+");
 
-		logVMessage("Eliana", "There are no items yet, is gradle broken or something?");
 		registerItems();
 	}
 
