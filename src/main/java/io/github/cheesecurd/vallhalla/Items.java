@@ -109,7 +109,7 @@ public class Items
 			new Item(new FabricItemSettings()
 					.group(VallHalla.VALLHALLA_TAB)
 					.maxCount(1)));
-	public static final Item murcuryblast = createItem("murcuryblast",
+	public static final Item mercuryblast = createItem("mercuryblast",
 			new Item(new FabricItemSettings()
 					.group(VallHalla.VALLHALLA_TAB)
 					.maxCount(1)));
