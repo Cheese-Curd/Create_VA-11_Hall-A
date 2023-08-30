@@ -1,0 +1,13 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+          {
+            "item": "minecraft:blaze_rod",
+            "return_chance": 0.00
+          },
+    ],
+    "result": {
+        "item": "vallhalla:beer",
+        "count": 1
+    }
+}
