@@ -3,18 +3,19 @@ package io.github.cheesecurd.vallhalla;
 import com.simibubi.create.Create;
 import io.github.fabricators_of_create.porting_lib.util.EnvExecutor;
 
+import io.github.cheesecurd.vallhalla.items.ModItems;
+import static io.github.cheesecurd.vallhalla.items.ModItems.registerItems;
+
 import net.fabricmc.api.ModInitializer;
-
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
-import net.minecraft.resources.ResourceLocation;
 
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static io.github.cheesecurd.vallhalla.Items.registerItems;
 
 public class VallHalla implements ModInitializer {
 	public static final String ID = "vallhalla";
@@ -22,7 +23,7 @@ public class VallHalla implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger(NAME);
 
 	public static final CreativeModeTab VALLHALLA_TAB = FabricItemGroupBuilder.create(new ResourceLocation("vallhalla", "vallhalla_tab"))
-			.icon(() -> new ItemStack(Items.shaker_icon))
+			.icon(() -> new ItemStack(ModItems.shaker_icon))
 			.build();
 
 	public static void logVMessage(String Char, String message)
