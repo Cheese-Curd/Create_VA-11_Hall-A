@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "G G",
+        "G G",
+        " P "
+    ],
+    "key": {
+      "P": {
+        "item": "minecraft:glass_pane"
+      },
+      "G": {
+        "item": "minecraft:glass"
+      }
+    },
+    "result": {
+        "item": "vallhalla:mug",
+        "count": 1
+    }
+}

@@ -6,6 +6,13 @@
 	"item.vallhalla.karmotrine": "Karmotrine",
 	"item.vallhalla.ingredient_can": "Ingredient Can",
 
+  "item.vallhalla.collins_glass": "Empty Collins Glass",
+  "item.vallhalla.coupe_glass": "Empty Coupe Glass",
+  "item.vallhalla.hurricane_glass": "Empty Hurricane Glass",
+  "item.vallhalla.mug": "Empty Mug",
+  "item.vallhalla.rocks_glass": "Empty Rocks Glass",
+  "item.vallhalla.tumbler_glass": "Empty Tumbler Glass",
+
   "item.vallhalla.bad_touch": "Bad Touch",
   "item.vallhalla.beer": "Beer",
   "item.vallhalla.bleeding_jane": "Bleeding Jane",

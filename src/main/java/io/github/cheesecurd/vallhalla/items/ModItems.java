@@ -45,6 +45,21 @@ public class ModItems
 	public static final Item shaker_icon = createItem("shaker_icon", // This is only the icon, the item has 0 purpose, hence the '_icon'
 			new Item(new FabricItemSettings().maxCount(1)));
 
+	// Glasses
+	public static final Item mug = createItem("mug",
+			new Item(new FabricItemSettings().group(VallHalla.VALLHALLA_TAB)));
+	public static final Item collins_glass = createItem("collins_glass",
+			new Item(new FabricItemSettings().group(VallHalla.VALLHALLA_TAB)));
+	public static final Item coupe_glass = createItem("coupe_glass",
+			new Item(new FabricItemSettings().group(VallHalla.VALLHALLA_TAB)));
+	public static final Item hurricane_glass = createItem("hurricane_glass",
+			new Item(new FabricItemSettings().group(VallHalla.VALLHALLA_TAB)));
+	public static final Item rocks_glass = createItem("rocks_glass",
+			new Item(new FabricItemSettings().group(VallHalla.VALLHALLA_TAB)));
+	public static final Item tumbler_glass = createItem("tumbler_glass",
+			new Item(new FabricItemSettings().group(VallHalla.VALLHALLA_TAB)));
+
+
 	// Drinks
 
 	// B
