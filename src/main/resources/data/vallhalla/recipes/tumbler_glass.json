@@ -7,9 +7,6 @@
     "key": {
       "P": {
         "item": "minecraft:glass_pane"
-      },
-      "G": {
-        "item": "minecraft:glass"
       }
     },
     "result": {
