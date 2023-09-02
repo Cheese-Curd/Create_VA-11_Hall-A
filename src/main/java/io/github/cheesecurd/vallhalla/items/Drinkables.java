@@ -31,15 +31,15 @@ public class Drinkables extends Item
 			.saturationMod(0)
 			.alwaysEat();
 		if (adelhyde != 0)
-			foodProps.effect(new MobEffectInstance(MobEffects.DIG_SPEED, adelhyde * 20, effectAmplifier), effectProb);
+			foodProps.effect(new MobEffectInstance(MobEffects.DIG_SPEED, adelhyde * 80, effectAmplifier), effectProb);
 		if (bronson != 0)
-			foodProps.effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, bronson * 20, effectAmplifier), effectProb);
+			foodProps.effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, bronson * 80, effectAmplifier), effectProb);
 		if (delta != 0)
-			foodProps.effect(new MobEffectInstance(MobEffects.WEAKNESS, delta * 20, effectAmplifier), effectProb);
+			foodProps.effect(new MobEffectInstance(MobEffects.WEAKNESS, delta * 80, effectAmplifier), effectProb);
 		if (flan != 0)
-			foodProps.effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, flan * 20, effectAmplifier), effectProb);
+			foodProps.effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, flan * 80, effectAmplifier), effectProb);
 		if (karmo != 0)
-			foodProps.effect(new MobEffectInstance(MobEffects.CONFUSION, karmo * 20, effectAmplifier), effectProb);
+			foodProps.effect(new MobEffectInstance(MobEffects.CONFUSION, karmo * 80, effectAmplifier), effectProb);
 		for (MobEffectInstance effectInstance : extraEffects)
 		{
 			foodProps.effect(effectInstance, effectProb);
