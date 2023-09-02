@@ -58,6 +58,8 @@ public class ModItems
 			new Item(new FabricItemSettings().group(VallHalla.VALLHALLA_TAB)));
 	public static final Item tumbler_glass = createItem("tumbler_glass",
 			new Item(new FabricItemSettings().group(VallHalla.VALLHALLA_TAB)));
+	public static final Item tiki_mug = createItem("tiki_mug",
+			new Item(new FabricItemSettings().group(VallHalla.VALLHALLA_TAB)));
 
 
 	// Drinks
