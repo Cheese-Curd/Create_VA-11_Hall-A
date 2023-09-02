@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 
 public class ModItems
 {
@@ -15,6 +16,17 @@ public class ModItems
 		return Registry.register(Registry.ITEM, new ResourceLocation("vallhalla", itemName), item);
 	}
 
+	public static Item createDrink(String itemName, Integer effectTime, Integer effectAmplifier, Integer effectProb, ItemStack returnItem /*, MobEffectInstance[] extraEffects */)
+	{
+		Drinkables item = new Drinkables(new FabricItemSettings()
+							.food(Drinkables.createAlcohol(effectTime, effectAmplifier, effectProb))
+							.group(VallHalla.VALLHALLA_TAB)
+							.maxCount(1));
+
+		item.setReturnItem(returnItem);
+
+		return Registry.register(Registry.ITEM, new ResourceLocation("vallhalla", itemName), item);
+	}
 	// Main stuff
 
 	public static final Item ingredient_can = createItem("ingredient_can",
@@ -46,6 +58,7 @@ public class ModItems
 			new Item(new FabricItemSettings().maxCount(1)));
 
 	// Glasses
+
 	public static final Item mug = createItem("mug",
 			new Item(new FabricItemSettings().group(VallHalla.VALLHALLA_TAB)));
 	public static final Item collins_glass = createItem("collins_glass",
@@ -61,142 +74,171 @@ public class ModItems
 	public static final Item tiki_mug = createItem("tiki_mug",
 			new Item(new FabricItemSettings().group(VallHalla.VALLHALLA_TAB)));
 
-
 	// Drinks
 
 	// B
-	public static final Item bad_touch = createItem("bad_touch",
-			new Item(new FabricItemSettings()
-					.food(Drinkables.generic_alcohol)
-					.group(VallHalla.VALLHALLA_TAB)
-					.maxCount(1)));
-	public static final Item beer = createItem("beer",
-			new Item(new FabricItemSettings()
-					.food(Drinkables.generic_alcohol)
-					.group(VallHalla.VALLHALLA_TAB)
-					.maxCount(1)));
-	public static final Item bleeding_jane = createItem("bleeding_jane",
-			new Item(new FabricItemSettings()
-					.food(Drinkables.generic_alcohol)
-					.group(VallHalla.VALLHALLA_TAB)
-					.maxCount(1)));
-	public static final Item bloom_light = createItem("bloom_light",
-			new Item(new FabricItemSettings()
-					.food(Drinkables.generic_alcohol)
-					.group(VallHalla.VALLHALLA_TAB)
-					.maxCount(1)));
-	public static final Item blue_fairy = createItem("blue_fairy",
-			new Item(new FabricItemSettings()
-					.food(Drinkables.generic_alcohol)
-					.group(VallHalla.VALLHALLA_TAB)
-					.maxCount(1)));
-	public static final Item brandtini = createItem("brandtini",
-			new Item(new FabricItemSettings()
-					.food(Drinkables.generic_alcohol)
-					.group(VallHalla.VALLHALLA_TAB)
-					.maxCount(1)));
+	public static final Item bad_touch = createDrink(
+			"bad_touch",
+			1000,
+			0,
+			1,
+			new ItemStack(collins_glass));
+	public static final Item beer = createDrink(
+			"beer",
+			1000,
+			0,
+			1,
+			new ItemStack(mug));
+	public static final Item bleeding_jane = createDrink(
+			"bleeding_jane",
+			1000,
+			0,
+			1,
+			new ItemStack(coupe_glass));
+	public static final Item bloom_light = createDrink(
+			"bloom_light",
+			1000,
+			0,
+			1,
+			new ItemStack(coupe_glass));
+	public static final Item blue_fairy = createDrink(
+			"blue_fairy",
+			1000,
+			0,
+			1,
+			new ItemStack(collins_glass));
+	public static final Item brandtini = createDrink(
+			"brandtini",
+			1000,
+			0,
+			1,
+			new ItemStack(coupe_glass));
 	// C
-	public static final Item cobalt_velvet = createItem("cobalt_velvet",
-			new Item(new FabricItemSettings()
-					.food(Drinkables.generic_alcohol)
-					.group(VallHalla.VALLHALLA_TAB)
-					.maxCount(1)));
-	public static final Item crevice_spike = createItem("crevice_spike",
-			new Item(new FabricItemSettings()
-					.food(Drinkables.generic_alcohol)
-					.group(VallHalla.VALLHALLA_TAB)
-					.maxCount(1)));
+	public static final Item cobalt_velvet = createDrink(
+			"cobalt_velvet",
+			1000,
+			0,
+			1,
+			new ItemStack(tumbler_glass));
+	public static final Item crevice_spike = createDrink(
+			"crevice_spike",
+			1000,
+			0,
+			1,
+			new ItemStack(rocks_glass));
 	// F
-	public static final Item flaming_moai = createItem("flaming_moai",
-			new Item(new FabricItemSettings()
-					.food(Drinkables.generic_alcohol)
-					.group(VallHalla.VALLHALLA_TAB)
-					.maxCount(1)));
-	public static final Item fluffy_dream = createItem("fluffy_dream",
-			new Item(new FabricItemSettings()
-					.food(Drinkables.generic_alcohol)
-					.group(VallHalla.VALLHALLA_TAB)
-					.maxCount(1)));
-	public static final Item fringe_weaver = createItem("fringe_weaver",
-			new Item(new FabricItemSettings()
-					.food(Drinkables.generic_alcohol)
-					.group(VallHalla.VALLHALLA_TAB)
-					.maxCount(1)));
-	public static final Item frothy_water = createItem("frothy_water",
-			new Item(new FabricItemSettings()
-					.food(Drinkables.generic_alcohol)
-					.group(VallHalla.VALLHALLA_TAB)
-					.maxCount(1)));
+	public static final Item flaming_moai = createDrink(
+			"flaming_moai",
+			1000,
+			0,
+			1,
+			new ItemStack(tiki_mug));
+	public static final Item fluffy_dream = createDrink(
+			"fluffy_dream",
+			1000,
+			0,
+			1,
+			new ItemStack(hurricane_glass));
+	public static final Item fringe_weaver = createDrink(
+			"fringe_weaver",
+			1000,
+			0,
+			1,
+			new ItemStack(coupe_glass));
+	public static final Item frothy_water = createDrink(
+			"frothy_water",
+			1000,
+			0,
+			1,
+			new ItemStack(mug));
 	// G
-	public static final Item grizzly_temple = createItem("grizzly_temple",
-			new Item(new FabricItemSettings()
-					.food(Drinkables.generic_alcohol)
-					.group(VallHalla.VALLHALLA_TAB)
-					.maxCount(1)));
-	public static final Item gut_punch = createItem("gut_punch",
-			new Item(new FabricItemSettings()
-					.food(Drinkables.generic_alcohol)
-					.group(VallHalla.VALLHALLA_TAB)
-					.maxCount(1)));
+	public static final Item grizzly_temple = createDrink(
+			"grizzly_temple",
+			1000,
+			0,
+			1,
+			new ItemStack(coupe_glass));
+	public static final Item gut_punch = createDrink(
+			"gut_punch",
+			1000,
+			0,
+			1,
+			new ItemStack(rocks_glass));
 	// M
-	public static final Item marsblast = createItem("marsblast",
-			new Item(new FabricItemSettings()
-					.food(Drinkables.generic_alcohol)
-					.group(VallHalla.VALLHALLA_TAB)
-					.maxCount(1)));
-	public static final Item mercuryblast = createItem("mercuryblast",
-			new Item(new FabricItemSettings()
-					.food(Drinkables.generic_alcohol)
-					.group(VallHalla.VALLHALLA_TAB)
-					.maxCount(1)));
-	public static final Item moonblast = createItem("moonblast",
-			new Item(new FabricItemSettings()
-					.food(Drinkables.generic_alcohol)
-					.group(VallHalla.VALLHALLA_TAB)
-					.maxCount(1)));
+	public static final Item marsblast = createDrink(
+			"marsblast",
+			1000,
+			0,
+			1,
+			new ItemStack(collins_glass));
+	public static final Item mercuryblast = createDrink(
+			"mercuryblast",
+			1000,
+			0,
+			1,
+			new ItemStack(collins_glass));
+	public static final Item moonblast = createDrink(
+			"moonblast",
+			1000,
+			0,
+			1,
+			new ItemStack(collins_glass));
 	// P
-	public static final Item piano_man = createItem("piano_man",
-			new Item(new FabricItemSettings()
-					.food(Drinkables.generic_alcohol)
-					.group(VallHalla.VALLHALLA_TAB)
-					.maxCount(1)));
-	public static final Item piano_woman = createItem("piano_woman",
-			new Item(new FabricItemSettings()
-					.food(Drinkables.generic_alcohol)
-					.group(VallHalla.VALLHALLA_TAB)
-					.maxCount(1)));
-	public static final Item pile_driver = createItem("pile_driver",
-			new Item(new FabricItemSettings()
-					.food(Drinkables.generic_alcohol)
-					.group(VallHalla.VALLHALLA_TAB)
-					.maxCount(1)));
+	public static final Item piano_man = createDrink(
+			"piano_man",
+			1000,
+			0,
+			1,
+			new ItemStack(hurricane_glass));
+	public static final Item piano_woman = createDrink(
+			"piano_woman",
+			1000,
+			0,
+			1,
+			new ItemStack(hurricane_glass));
+	public static final Item pile_driver = createDrink(
+			"pile_driver",
+			1000,
+			0,
+			1,
+			new ItemStack(rocks_glass));
 	// S
-	public static final Item sparkle_star = createItem("sparkle_star",
-			new Item(new FabricItemSettings()
-					.food(Drinkables.generic_alcohol)
-					.group(VallHalla.VALLHALLA_TAB)
-					.maxCount(1)));
-	public static final Item sugar_rush = createItem("sugar_rush",
-			new Item(new FabricItemSettings()
-					.food(Drinkables.generic_alcohol)
-					.group(VallHalla.VALLHALLA_TAB)
-					.maxCount(1)));
-	public static final Item sun_cloud = createItem("sun_cloud",
-			new Item(new FabricItemSettings()
-					.food(Drinkables.generic_alcohol)
-					.group(VallHalla.VALLHALLA_TAB)
-					.maxCount(1)));
-	public static final Item suplex = createItem("suplex",
-			new Item(new FabricItemSettings()
-					.food(Drinkables.generic_alcohol)
-					.group(VallHalla.VALLHALLA_TAB)
-					.maxCount(1)));
+	public static final Item sparkle_star = createDrink(
+			"sparkle_star",
+			1000,
+			0,
+			1,
+			new ItemStack(hurricane_glass));
+	public static final Item sugar_rush = createDrink(
+			"sugar_rush",
+			1000,
+			0,
+			1,
+			new ItemStack(collins_glass));
+	public static final Item sun_cloud = createDrink(
+			"sun_cloud",
+			1000,
+			0,
+			1,
+			new ItemStack(tumbler_glass));
+	public static final Item suplex = createDrink(
+			"suplex",
+			1000,
+			0,
+			1,
+			new ItemStack(rocks_glass));
 	// Z
-	public static final Item zen_star = createItem("zen_star",
-			new Item(new FabricItemSettings()
-					.food(Drinkables.generic_alcohol)
-					.group(VallHalla.VALLHALLA_TAB)
-					.maxCount(1)));
+	public static final Item zen_star = createDrink(
+			"zen_star",
+			1000,
+			0,
+			1,
+			new ItemStack(tumbler_glass));
+
+	// Tooltips
+	// no idea what I'm going :3
+	//TooltipModifier.REGISTRY.registry(adelhyde, new ItemDescription.Modifier(adelhyde, TooltipHelper.Palette.STANDARD_CREATE);
+
 
 	public static void registerItems() {}
 }
