@@ -1,0 +1,18 @@
+{
+  "swallow":
+  {
+    "subtitle": "subtitles.vallhalla.swallow",
+    "sounds":
+    [
+      "vallhalla:drink_swallow"
+    ]
+  },
+  "cha-ching":
+  {
+    "subtitle": "subtitles.vallhalla.money",
+    "sounds":
+    [
+      "vallhalla:money"
+    ]
+  }
+}

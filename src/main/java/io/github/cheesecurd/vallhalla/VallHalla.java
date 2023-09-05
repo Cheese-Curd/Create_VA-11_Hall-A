@@ -9,7 +9,9 @@ import static io.github.cheesecurd.vallhalla.items.ModItems.registerItems;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 
+import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 
@@ -21,6 +23,11 @@ public class VallHalla implements ModInitializer {
 	public static final String ID = "vallhalla";
 	public static final String NAME = "VA-11 Hall-A";
 	public static final Logger LOGGER = LoggerFactory.getLogger(NAME);
+
+	public static final ResourceLocation DRINK_SOUND_ID = new ResourceLocation("vallhalla:drink_swollow");
+	public static final ResourceLocation MONEY_SOUND_ID = new ResourceLocation("vallhalla:money");
+	public static SoundEvent DRINK_SOUND_EVENT = new SoundEvent(DRINK_SOUND_ID);
+	public static SoundEvent MONEY_SOUND_EVENT = new SoundEvent(MONEY_SOUND_ID);
 
 	public static final CreativeModeTab VALLHALLA_TAB = FabricItemGroupBuilder.create(new ResourceLocation("vallhalla", "vallhalla_tab"))
 			.icon(() -> new ItemStack(ModItems.shaker_icon))
@@ -52,7 +59,10 @@ public class VallHalla implements ModInitializer {
 		LOGGER.info("| Time to mix drinks and change lives. |");
 		LOGGER.info("+======================================+");
 
+		// Registering
 		registerItems();
+		Registry.register(Registry.SOUND_EVENT, DRINK_SOUND_ID, DRINK_SOUND_EVENT);
+		Registry.register(Registry.SOUND_EVENT, MONEY_SOUND_ID, MONEY_SOUND_EVENT);
 	}
 
 	public static ResourceLocation id(String path) {

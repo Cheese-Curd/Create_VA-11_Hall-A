@@ -40,5 +40,8 @@
   "item.vallhalla.suplex": "Suplex",
   "item.vallhalla.zen_star": "Zen Star",
 
-	"itemGroup.vallhalla.vallhalla_tab": "VA-11 Hall-A"
+	"itemGroup.vallhalla.vallhalla_tab": "VA-11 Hall-A",
+
+  "subtitles.vallhalla.money": "Cha-Ching!",
+  "subtitles.vallhalla.swallow": "Playing swallowing drink"
 }

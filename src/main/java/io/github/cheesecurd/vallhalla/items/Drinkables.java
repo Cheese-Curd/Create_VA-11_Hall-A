@@ -5,23 +5,23 @@ import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 
 public class Drinkables extends Item
 {
-	private ItemStack returnItem;
+	private Item returnItem;
 
 	public Drinkables(Properties properties)
 	{
 		super(properties);
-		this.returnItem = new ItemStack(Items.GLASS_BOTTLE);
+		this.returnItem = Items.GLASS_BOTTLE;
 	}
 
 	public static FoodProperties createAlcohol(Integer adelhyde, Integer bronson, Integer delta, Integer flan, Integer karmo, Integer effectAmplifier, Integer effectProb, MobEffectInstance[] extraEffects)
@@ -31,15 +31,15 @@ public class Drinkables extends Item
 			.saturationMod(0)
 			.alwaysEat();
 		if (adelhyde != 0)
-			foodProps.effect(new MobEffectInstance(MobEffects.DIG_SPEED, adelhyde * 80, effectAmplifier), effectProb);
+			foodProps.effect(new MobEffectInstance(MobEffects.DIG_SPEED, adelhyde * 160, effectAmplifier), effectProb);
 		if (bronson != 0)
-			foodProps.effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, bronson * 80, effectAmplifier), effectProb);
+			foodProps.effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, bronson * 160, effectAmplifier), effectProb);
 		if (delta != 0)
-			foodProps.effect(new MobEffectInstance(MobEffects.WEAKNESS, delta * 80, effectAmplifier), effectProb);
+			foodProps.effect(new MobEffectInstance(MobEffects.WEAKNESS, delta * 160, effectAmplifier), effectProb);
 		if (flan != 0)
-			foodProps.effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, flan * 80, effectAmplifier), effectProb);
+			foodProps.effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, flan * 160, effectAmplifier), effectProb);
 		if (karmo != 0)
-			foodProps.effect(new MobEffectInstance(MobEffects.CONFUSION, karmo * 80, effectAmplifier), effectProb);
+			foodProps.effect(new MobEffectInstance(MobEffects.CONFUSION, karmo * 160, effectAmplifier), effectProb);
 		for (MobEffectInstance effectInstance : extraEffects)
 		{
 			foodProps.effect(effectInstance, effectProb);
@@ -47,12 +47,12 @@ public class Drinkables extends Item
 		return foodProps.build();
 	}
 
-	public void setReturnItem(ItemStack returnItem)
+	public void setReturnItem(Item returnItem)
 	{
 		this.returnItem = returnItem;
 	}
 
-	public ItemStack getReturnItem()
+	public Item getReturnItem()
 	{
 		return returnItem;
 	}
@@ -67,7 +67,7 @@ public class Drinkables extends Item
 
 		if (!level.isClientSide) // mfw I hard code this because I don't know how to do this otherwise
 		{
-			if (stack.getItem().equals(ModItems.sugar_rush))
+			if (this.equals(ModItems.sugar_rush))
 			{
 				livingEntity.removeEffect(MobEffects.CONFUSION);
 			}
@@ -77,11 +77,19 @@ public class Drinkables extends Item
 			}
 		}
 
-
-		VallHalla.logVMessage("Eliana", "You just drank out of a " + getReturnItem() + ".");
+		if (!level.isClientSide) { // Drink sound
+			level.playSound(
+				null, // Player - if non-null, will play sound for every nearby player *except* the specified player
+				livingEntity, // The position of where the sound will come from
+				VallHalla.DRINK_SOUND_EVENT, // The sound that will play
+				SoundSource.PLAYERS, // This determines which of the volume sliders affect this sound
+				1f, //Volume multiplier, 1 is normal, 0.5 is half volume, etc
+				1f // Pitch multiplier, 1 is normal, 0.5 is half pitch, etc
+			);
+		}
 
 		// wow, thanks MilkBucketItem.class
-		return stack.isEmpty() ? returnItem : stack;
+		return stack.isEmpty() ? new ItemStack(returnItem) : stack;
 	}
 
 	@Override

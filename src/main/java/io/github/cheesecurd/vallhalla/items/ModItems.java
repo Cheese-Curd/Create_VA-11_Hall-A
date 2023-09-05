@@ -9,7 +9,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 
 public class ModItems
 {
@@ -18,13 +17,13 @@ public class ModItems
 		return Registry.register(Registry.ITEM, new ResourceLocation("vallhalla", itemName), item);
 	}
 
-	public static Item createDrink(String itemName, Integer adelhyde, Integer bronson, Integer delta, Integer flan, Integer karmo, Integer effectAmplifier, Integer effectProb, ItemStack returnItem, MobEffectInstance[] extraEffects)
+	public static Item createDrink(String itemName, Integer adelhyde, Integer bronson, Integer delta, Integer flan, Integer karmo, Integer effectAmplifier, Integer effectProb, Item returnItem, MobEffectInstance[] extraEffects)
 	{
 
 		Drinkables item = new Drinkables(new FabricItemSettings()
 							.food(Drinkables.createAlcohol(adelhyde, bronson, delta, flan, karmo, effectAmplifier, effectProb, extraEffects))
 							.group(VallHalla.VALLHALLA_TAB)
-							.maxCount(2));
+							.maxCount(1));
 
 		item.setReturnItem(returnItem);
 
@@ -93,7 +92,7 @@ public class ModItems
 			4,
 			0,
 			1,
-			new ItemStack(collins_glass),
+			collins_glass,
 			noEffects);
 	public static final Item beer = createDrink(
 			"beer",
@@ -104,7 +103,7 @@ public class ModItems
 			4,
 			0,
 			1,
-			new ItemStack(mug),
+			mug,
 			noEffects);
 	public static final Item bleeding_jane = createDrink(
 			"bleeding_jane",
@@ -115,7 +114,7 @@ public class ModItems
 			0,
 			0,
 			1,
-			new ItemStack(coupe_glass),
+			coupe_glass,
 			noEffects);
 	public static final Item bloom_light = createDrink(
 			"bloom_light",
@@ -126,7 +125,7 @@ public class ModItems
 			3,
 			0,
 			1,
-			new ItemStack(coupe_glass),
+			coupe_glass,
 			noEffects);
 	public static final Item blue_fairy = createDrink(
 			"blue_fairy",
@@ -137,7 +136,7 @@ public class ModItems
 			0,
 			0,
 			1,
-			new ItemStack(collins_glass),
+			collins_glass,
 			noEffects);
 	public static final Item brandtini = createDrink(
 			"brandtini",
@@ -148,7 +147,7 @@ public class ModItems
 			1,
 			0,
 			1,
-			new ItemStack(coupe_glass),
+			coupe_glass,
 			noEffects);
 	// C
 	public static final Item cobalt_velvet = createDrink(
@@ -160,7 +159,7 @@ public class ModItems
 			5,
 			0,
 			1,
-			new ItemStack(tumbler_glass),
+			tumbler_glass,
 			noEffects);
 	public static final Item crevice_spike = createDrink(
 			"crevice_spike",
@@ -171,7 +170,7 @@ public class ModItems
 			0,
 			0,
 			1,
-			new ItemStack(rocks_glass),
+			rocks_glass,
 			noEffects);
 	// F
 	public static final Item flaming_moai = createDrink(
@@ -183,7 +182,7 @@ public class ModItems
 			5,
 			0,
 			1,
-			new ItemStack(tiki_mug),
+			tiki_mug,
 			noEffects);
 	public static final Item fluffy_dream = createDrink(
 			"fluffy_dream",
@@ -194,7 +193,7 @@ public class ModItems
 			0,
 			0,
 			1,
-			new ItemStack(hurricane_glass),
+			hurricane_glass,
 			noEffects);
 	public static final Item fringe_weaver = createDrink(
 			"fringe_weaver",
@@ -203,9 +202,9 @@ public class ModItems
 			0,
 			0,
 			9,
-			0,
 			1,
-			new ItemStack(coupe_glass),
+			1,
+			coupe_glass,
 			noEffects);
 	public static final Item frothy_water = createDrink(
 			"frothy_water",
@@ -216,7 +215,7 @@ public class ModItems
 			0,
 			0,
 			1,
-			new ItemStack(mug),
+			mug,
 			noEffects);
 	// G
 	public static final Item grizzly_temple = createDrink(
@@ -228,7 +227,7 @@ public class ModItems
 			1,
 			0,
 			1,
-			new ItemStack(coupe_glass),
+			coupe_glass,
 			noEffects);
 	public static final Item gut_punch = createDrink(
 			"gut_punch",
@@ -237,9 +236,9 @@ public class ModItems
 			0,
 			1,
 			0,
-			0,
 			1,
-			new ItemStack(rocks_glass),
+			1,
+			rocks_glass,
 			noEffects);
 	// M
 	public static final Item marsblast = createDrink(
@@ -249,9 +248,9 @@ public class ModItems
 			1,
 			4,
 			2,
-			0,
 			1,
-			new ItemStack(collins_glass),
+			1,
+			collins_glass,
 			noEffects);
 	public static final Item mercuryblast = createDrink(
 			"mercuryblast",
@@ -262,7 +261,7 @@ public class ModItems
 			2,
 			0,
 			1,
-			new ItemStack(collins_glass),
+			collins_glass,
 			noEffects);
 	public static final Item moonblast = createDrink(
 			"moonblast",
@@ -273,7 +272,7 @@ public class ModItems
 			2,
 			0,
 			1,
-			new ItemStack(collins_glass),
+			collins_glass,
 			noEffects);
 	// P
 	public static final Item piano_man = createDrink(
@@ -283,9 +282,9 @@ public class ModItems
 			5,
 			5,
 			3,
-			0,
 			1,
-			new ItemStack(hurricane_glass),
+			1,
+			hurricane_glass,
 			noEffects);
 	public static final Item piano_woman = createDrink(
 			"piano_woman",
@@ -296,7 +295,7 @@ public class ModItems
 			3,
 			0,
 			1,
-			new ItemStack(hurricane_glass),
+			hurricane_glass,
 			noEffects);
 	public static final Item pile_driver = createDrink(
 			"pile_driver",
@@ -307,7 +306,7 @@ public class ModItems
 			4,
 			0,
 			1,
-			new ItemStack(rocks_glass),
+			rocks_glass,
 			noEffects);
 	// S
 	public static final Item sparkle_star = createDrink(
@@ -319,7 +318,7 @@ public class ModItems
 			0,
 			0,
 			1,
-			new ItemStack(hurricane_glass),
+			hurricane_glass,
 			noEffects);
 
 	public static final Item sugar_rush = createDrink(
@@ -331,7 +330,7 @@ public class ModItems
 			0,
 			0,
 			1,
-			new ItemStack(collins_glass),
+			collins_glass,
 			speedEffect);
 	public static final Item sun_cloud = createDrink(
 			"sun_cloud",
@@ -342,7 +341,7 @@ public class ModItems
 			0,
 			0,
 			1,
-			new ItemStack(tumbler_glass),
+			tumbler_glass,
 			noEffects);
 	public static final Item suplex = createDrink(
 			"suplex",
@@ -353,7 +352,7 @@ public class ModItems
 			3,
 			0,
 			1,
-			new ItemStack(rocks_glass),
+			rocks_glass,
 			noEffects);
 	// Z
 	public static final Item zen_star = createDrink(
@@ -365,7 +364,7 @@ public class ModItems
 			4,
 			0,
 			1,
-			new ItemStack(tumbler_glass),
+			tumbler_glass,
 			noEffects);
 
 	// Tooltips
