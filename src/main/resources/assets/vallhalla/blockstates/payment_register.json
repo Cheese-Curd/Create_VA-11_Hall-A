@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "vallhalla:block/payment_register"},
+    "facing=east":  { "model": "vallhalla:block/payment_register", "y":  90},
+    "facing=south": { "model": "vallhalla:block/payment_register", "y": 180},
+    "facing=west":  { "model": "vallhalla:block/payment_register", "y": 270}
+  }
+}

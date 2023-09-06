@@ -4,6 +4,8 @@ import com.simibubi.create.Create;
 import io.github.fabricators_of_create.porting_lib.util.EnvExecutor;
 
 import io.github.cheesecurd.vallhalla.items.ModItems;
+
+import static io.github.cheesecurd.vallhalla.blocks.ModBlocks.registerBlocks;
 import static io.github.cheesecurd.vallhalla.items.ModItems.registerItems;
 
 import net.fabricmc.api.ModInitializer;
@@ -24,7 +26,7 @@ public class VallHalla implements ModInitializer {
 	public static final String NAME = "VA-11 Hall-A";
 	public static final Logger LOGGER = LoggerFactory.getLogger(NAME);
 
-	public static final ResourceLocation DRINK_SOUND_ID = new ResourceLocation("vallhalla:drink_swollow");
+	public static final ResourceLocation DRINK_SOUND_ID = new ResourceLocation("vallhalla:drink_swallow");
 	public static final ResourceLocation MONEY_SOUND_ID = new ResourceLocation("vallhalla:money");
 	public static SoundEvent DRINK_SOUND_EVENT = new SoundEvent(DRINK_SOUND_ID);
 	public static SoundEvent MONEY_SOUND_EVENT = new SoundEvent(MONEY_SOUND_ID);
@@ -47,6 +49,8 @@ public class VallHalla implements ModInitializer {
 		LOGGER.info("+" + "=".repeat(totalLength) + "+");
 	}
 
+
+
 	@Override
 	public void onInitialize() {
 		LOGGER.info("Create addon mod [{}] is loading alongside Create [{}]!", NAME, Create.VERSION);
@@ -61,6 +65,7 @@ public class VallHalla implements ModInitializer {
 
 		// Registering
 		registerItems();
+		registerBlocks();
 		Registry.register(Registry.SOUND_EVENT, DRINK_SOUND_ID, DRINK_SOUND_EVENT);
 		Registry.register(Registry.SOUND_EVENT, MONEY_SOUND_ID, MONEY_SOUND_EVENT);
 	}

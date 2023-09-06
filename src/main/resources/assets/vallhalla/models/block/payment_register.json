@@ -1,9 +1,9 @@
-{
+  {
 	"credit": "Eliana",
 	"texture_size": [44, 44],
 	"textures": {
-		"0": "payment_register",
-		"particle": "payment_register"
+		"0": "vallhalla:block/payment_register",
+		"particle": "vallhalla:block/payment_register"
 	},
 	"elements": [
 		{
