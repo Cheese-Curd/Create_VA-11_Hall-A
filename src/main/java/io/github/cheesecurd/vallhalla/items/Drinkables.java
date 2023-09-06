@@ -58,6 +58,7 @@ public class Drinkables extends Item
 	}
 
 	// mfw I stole this code from a honey bottle :3
+	@Override
 	public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity livingEntity) {
 		super.finishUsingItem(stack, level, livingEntity);
 		if (livingEntity instanceof ServerPlayer serverPlayer) {
