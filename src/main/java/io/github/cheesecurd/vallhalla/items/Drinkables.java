@@ -1,7 +1,10 @@
 package io.github.cheesecurd.vallhalla.items;
 
 import io.github.cheesecurd.vallhalla.VallHalla;
+import net.minecraft.ChatFormatting;
 import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.contents.TranslatableContents;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -10,17 +13,26 @@ import net.minecraft.stats.Stats;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 
+import net.minecraft.world.level.gameevent.GameEvent;
+
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
+
 public class Drinkables extends Item
 {
 	private Item returnItem;
+	private String descTag;
 
-	public Drinkables(Properties properties)
+	public Drinkables(Properties properties, String descTag)
 	{
 		super(properties);
+		this.descTag = descTag;
 		this.returnItem = Items.GLASS_BOTTLE;
 	}
 
@@ -61,6 +73,7 @@ public class Drinkables extends Item
 	@Override
 	public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity livingEntity) {
 		super.finishUsingItem(stack, level, livingEntity);
+
 		if (livingEntity instanceof ServerPlayer serverPlayer) {
 			CriteriaTriggers.CONSUME_ITEM.trigger(serverPlayer, stack);
 			serverPlayer.awardStat(Stats.ITEM_USED.get(this));
@@ -78,17 +91,6 @@ public class Drinkables extends Item
 			}
 		}
 
-		if (!level.isClientSide) { // Drink sound
-			level.playSound(
-				null, // Player - if non-null, will play sound for every nearby player *except* the specified player
-				livingEntity, // The position of where the sound will come from
-				VallHalla.DRINK_SOUND_EVENT, // The sound that will play
-				SoundSource.PLAYERS, // This determines which of the volume sliders affect this sound
-				1f, //Volume multiplier, 1 is normal, 0.5 is half volume, etc
-				1f // Pitch multiplier, 1 is normal, 0.5 is half pitch, etc
-			);
-		}
-
 		// wow, thanks MilkBucketItem.class
 		return stack.isEmpty() ? new ItemStack(returnItem) : stack;
 	}
@@ -104,14 +106,15 @@ public class Drinkables extends Item
 		return UseAnim.DRINK;
 	}
 	@Override
-	public SoundEvent getDrinkingSound()
-	{
-
-		return SoundEvents.GENERIC_DRINK;
-	}
-	@Override
 	public SoundEvent getEatingSound()
 	{
-		return SoundEvents.GENERIC_DRINK;
+		return VallHalla.DRINK_SOUND_EVENT;
+	}
+
+	@Override
+	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
+
+		tooltipComponents.add(Component.translatable("itemTooltip.vallhalla.drink.description." + descTag).withStyle(ChatFormatting.B LUE));
+		super.appendHoverText(stack, level, tooltipComponents, isAdvanced);
 	}
 }

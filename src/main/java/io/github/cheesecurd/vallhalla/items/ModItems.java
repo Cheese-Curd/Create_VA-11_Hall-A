@@ -9,6 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Rarity;
 
 public class ModItems
 {
@@ -23,7 +24,8 @@ public class ModItems
 		Drinkables item = new Drinkables(new FabricItemSettings()
 							.food(Drinkables.createAlcohol(adelhyde, bronson, delta, flan, karmo, effectAmplifier, effectProb, extraEffects))
 							.group(VallHalla.VALLHALLA_TAB)
-							.maxCount(1));
+							.rarity(Rarity.RARE)
+							.maxCount(1), itemName);
 
 		item.setReturnItem(returnItem);
 
