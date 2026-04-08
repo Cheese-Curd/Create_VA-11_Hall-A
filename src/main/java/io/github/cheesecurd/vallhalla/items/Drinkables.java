@@ -114,7 +114,7 @@ public class Drinkables extends Item
 	@Override
 	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
 
-		tooltipComponents.add(Component.translatable("itemTooltip.vallhalla.drink.description." + descTag).withStyle(ChatFormatting.B LUE));
+		tooltipComponents.add(Component.translatable("itemTooltip.vallhalla.drink.description." + descTag).withStyle(ChatFormatting.BLUE));
 		super.appendHoverText(stack, level, tooltipComponents, isAdvanced);
 	}
 }
