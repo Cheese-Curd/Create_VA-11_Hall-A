@@ -25,7 +25,8 @@ public class ModItems
 							.food(Drinkables.createAlcohol(adelhyde, bronson, delta, flan, karmo, effectAmplifier, effectProb, extraEffects))
 							.group(VallHalla.VALLHALLA_TAB)
 							.rarity(Rarity.RARE)
-							.maxCount(1), itemName);
+							.maxCount(1),
+				itemName);
 
 		item.setReturnItem(returnItem);
 
@@ -76,6 +77,8 @@ public class ModItems
 	public static final Item tumbler_glass = createItem("tumbler_glass",
 			new Item(new FabricItemSettings().group(VallHalla.VALLHALLA_TAB)));
 	public static final Item tiki_mug = createItem("tiki_mug",
+			new Item(new FabricItemSettings().group(VallHalla.VALLHALLA_TAB)));
+	public static final Item weizen_glass = createItem("weizen_glass",
 			new Item(new FabricItemSettings().group(VallHalla.VALLHALLA_TAB)));
 
 	// Drinks
@@ -263,7 +266,7 @@ public class ModItems
 			2,
 			0,
 			1,
-			collins_glass,
+			weizen_glass,
 			noEffects);
 	public static final Item moonblast = createDrink(
 			"moonblast",
@@ -332,7 +335,7 @@ public class ModItems
 			0,
 			0,
 			1,
-			collins_glass,
+			weizen_glass,
 			speedEffect);
 	public static final Item sun_cloud = createDrink(
 			"sun_cloud",
